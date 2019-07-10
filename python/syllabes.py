@@ -22,3 +22,11 @@ def get_vowel_consonant(word):
             vowel_consonant_form += "c"
 
     return vowel_consonant_form
+
+# test du module syllabes
+if __name__ == "__main__":
+    chaine = "test"
+    # test fonction get_vowel_consonant
+    print("get_vowel_consonant({}) = {}".format(chaine,
+                                                get_vowel_consonant(chaine)))
+    
