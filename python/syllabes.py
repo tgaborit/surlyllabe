@@ -247,3 +247,9 @@ if __name__ == "__main__":
     print("special_cases(get_vowel_consonant({0}), {0}) = {1}".format(
         repr("guigne"),
         repr(special_cases(get_vowel_consonant("guigne"), "guigne"))))
+
+    # test fonction get_syllabation
+    print("get_syllabation({}) = {}".format(
+        repr("pharmacie"),
+        repr(get_syllabation("pharmacie"))))
+    
