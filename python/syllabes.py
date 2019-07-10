@@ -77,3 +77,8 @@ if __name__ == "__main__":
     print("replace_on(get_vowel_consonant({0}), {0}, {1}, {2}) = {3}".format(
         repr("chat"), repr("ch"), repr("gg"),
         repr(replace_on(get_vowel_consonant("chat"), "chat", "ch", "gg"))))
+
+    # test fonction special_cases
+    print("special_cases(get_vowel_consonant({0}), {0}) = {1}".format(
+        repr("guigne"),
+        repr(special_cases(get_vowel_consonant("guigne"), "guigne"))))
