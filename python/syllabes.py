@@ -7,7 +7,7 @@ import re
 
 def get_vowel_consonant(word):
     """
-    Fonction de conversion du mot en chaîne de voyelles et consonnes.
+    Fonction d'analyse d'un mot vers une chaîne de voyelles et consonnes.
     """
     # Set des voyelles
     vowel = {'a', 'e', 'i', 'o', 'u', 'y'}
@@ -30,13 +30,12 @@ def get_vowel_consonant(word):
 
 def replace_on(on_this, base, to_find, by):
     """
-    Recherche et remplacement de caractères dans une chaîne
+    Recherche et remplacement de caractères dans une chaîne d'analyse
     en fonction d'un pattern trouvé dans une autre chaîne
  
     -Usage-
     replace_on(get_vowel_consonant("chat"), "chat", "ch", "gg")
     """
-
     # Recherche du pattern
     pos = [(m.start(), m.end()) for m in re.finditer(to_find, base) ]
 
@@ -45,6 +44,26 @@ def replace_on(on_this, base, to_find, by):
         on_this = on_this[0:start] + by + on_this[end:]
      
     return on_this
+
+
+def special_cases(analysis_str, base):
+    """
+    Fonction de détection de cas particuliers de groupes de lettres
+    par rapport au découpage syllabique
+    """
+    # Set de groupes de lettres particuliers
+    to_match_case = {"bl", "br", "ch", "cl", "cr", "dr", "fl", "fr", "gh",
+                     "gl", "gn", "gr", "kl", "kr", "kh", "kn", "ph", "pl",
+                     "pr", "rh", "qu", "tr", "th", "vr"}
+
+    # Remplacement par "gg" dans la chaîne d'analyse
+    for m in to_match_case:
+        analysis_str = replace_on(analysis_str, base,  m, "gg" )
+
+    # Cas particulier de "gu"
+    analysis_str = replace_on(analysis_str, base,  "gu", "gu" )
+    
+    return analysis_str
 
 
 # test du module syllabes
