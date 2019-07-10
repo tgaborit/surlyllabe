@@ -1,6 +1,7 @@
 # -*-coding:Utf-8 -*
 
-""" Programme chargé de décomposer un mot français en syllabes"""
+""" Module permettant de décomposer un mot français en syllabes"""
+
 
 def get_vowel_consonant(word):
     """ Fonction de conversion du mot en chaîne de voyelles et consonnes."""
