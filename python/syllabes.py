@@ -49,8 +49,12 @@ def replace_on(on_this, base, to_find, by):
 
 # test du module syllabes
 if __name__ == "__main__":
-    chaine = "test"
     
     # test fonction get_vowel_consonant
-    print("get_vowel_consonant({}) = {}".format(chaine,
-                                                get_vowel_consonant(chaine)))
+    print("get_vowel_consonant({}) = {}".format(
+        repr("test"), repr(get_vowel_consonant("test"))))
+          
+    # test fonction replace_on
+    print("replace_on(get_vowel_consonant({0}), {0}, {1}, {2}) = {3}".format(
+        repr("chat"), repr("ch"), repr("gg"),
+        repr(replace_on(get_vowel_consonant("chat"), "chat", "ch", "gg"))))
