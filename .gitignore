@@ -1,0 +1,11 @@
+# Word document
+*.doc*
+
+# Word document temporary
+~$*.doc*
+
+# Word Auto Backup File
+Backup of *.doc*
+
+# Word document with macros temporary
+~$*.dot*
