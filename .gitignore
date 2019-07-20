@@ -1,3 +1,6 @@
+# Temporary file
+*.tmp
+
 # Word document
 *.doc*
 
