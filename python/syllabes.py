@@ -263,7 +263,12 @@ if __name__ == "__main__":
         repr("guigne"),
         repr(special_cases(get_vowel_consonant("guigne"), "guigne"))))
 
-    # test fonction get_syllabation
+    # test fonction syl_analysis
+    print("syl_analysis({}) = {}".format(
+        repr("pachiderme"),
+        repr(syl_analysis("pachiderme"))))
+    
+    # test fonction syllabation
     print("syllabation({}) = {}".format(
         repr("pharmacie"),
         repr(syllabation("pharmacie"))))
