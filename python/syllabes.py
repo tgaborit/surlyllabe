@@ -243,7 +243,7 @@ def syllabation(word):
     syllabes = [ word[gr.start():gr.end()] for gr in
                  re.finditer(regle, final_form)]
      
-    return syllabes, final_form
+    return syllabes
 
 
 # test du module syllabes
