@@ -92,8 +92,7 @@ def syllabation(word):
     syllabique du mot.
     """
     
-    vowel_consonant_form = get_vowel_consonant(word)
-    final_form = special_cases(vowel_consonant_form, word)
+    final_form = syl_analysis(word)
 
     # Règles de syllabisation de la langue française par ordre de priorité
     sub_rules = [r"(?=vc)ccv(?=gg)",      # chan-sti-quer
