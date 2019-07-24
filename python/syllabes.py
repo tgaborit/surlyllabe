@@ -68,6 +68,22 @@ def special_cases(analysis_str, base):
     return analysis_str
 
 
+def syl_analysis(word):
+    """
+    Fonction d'analyse syllabique d'un mot. Fait appel à la fonction de
+    détection des voyelles et consonnes puis détecte les cas syllabiques
+    particuliers en faisant appel à une seconde fonction.
+    Retourne la chaîne d'analyse finale.
+    """
+    # Détection des voyelles et consonnes
+    vowel_consonant_form = get_vowel_consonant(word)
+
+    # Traitement des cas particuliers
+    final_form = special_cases(vowel_consonant_form, word)
+
+    return final_form
+
+
 def get_syllabation(word):
     """
     Fonction générale de syllabisation d'un mot. Réalise l'annalyse des
