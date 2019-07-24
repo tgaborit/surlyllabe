@@ -84,7 +84,7 @@ def syl_analysis(word):
     return final_form
 
 
-def get_syllabation(word):
+def syllabation(word):
     """
     Fonction générale de syllabisation d'un mot. Réalise l'annalyse des
     lettres du mot puis la compare à une liste de règles de syllabisation.
@@ -265,7 +265,7 @@ if __name__ == "__main__":
         repr(special_cases(get_vowel_consonant("guigne"), "guigne"))))
 
     # test fonction get_syllabation
-    print("get_syllabation({}) = {}".format(
+    print("syllabation({}) = {}".format(
         repr("pharmacie"),
-        repr(get_syllabation("pharmacie"))))
+        repr(syllabation("pharmacie"))))
     
