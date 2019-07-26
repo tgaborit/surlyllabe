@@ -13,7 +13,7 @@ from syllabes import *
 parser = argparse.ArgumentParser(description="Proceeds to the syllabation of \
 the word given, then encodes the result in a number whose Nth digit means \
 the number of characters in the Nth syllable.")
-parser.add_argument("word", type=str, help="word to be analysed")
+parser.add_argument("word", type=str, help="word to analyse")
 args = parser.parse_args()
 
 # Encodage de la syllabisation :
