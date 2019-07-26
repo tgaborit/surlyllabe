@@ -3,7 +3,9 @@
 import argparse
 from syllabes import *
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description="Proceeds to the syllabation of \
+the word given, then encodes the result in a number whose Nth digit means \
+the number of characters in the Nth syllable.")
 parser.add_argument("word", type=str)
 args = parser.parse_args()
 
