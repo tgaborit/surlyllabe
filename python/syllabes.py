@@ -10,7 +10,12 @@ def get_vowel_consonant(word):
     Fonction d'analyse d'un mot vers une chaîne de voyelles et consonnes.
     """
     # Set des voyelles
-    vowel = {'a', 'e', 'i', 'o', 'u', 'y'}
+    vowel = {'a',      'à', 'â',
+             'e', 'é', 'è', 'ê', 'ë',
+             'i',           'î', 'ï',
+             'o',           'ô',
+             'u',      'ù', 'û',
+             'y'}
 
     # Set des consonnes
     consonant = {'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n',
