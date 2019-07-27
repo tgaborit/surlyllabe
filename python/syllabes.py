@@ -25,9 +25,9 @@ def get_vowel_consonant(word):
 
     # Traduction en chaine de voyelles (v) et consonnes (c)
     for i, ch in enumerate(word):
-        if ch in vowel:
+        if ch.casefold() in vowel:
             vowel_consonant_form += "v"
-        elif ch in consonant:
+        elif ch.casefold() in consonant:
             vowel_consonant_form += "c"
 
     return vowel_consonant_form
@@ -43,7 +43,7 @@ def replace_on(on_this, base, to_find, by):
     replace_on(get_vowel_consonant("chat"), "chat", "ch", "gg")
     """
     # Recherche du pattern
-    pos = [(m.start(), m.end()) for m in re.finditer(to_find, base) ]
+    pos = [(m.start(), m.end()) for m in re.finditer(to_find, base.casefold())]
 
     # Remplacement à la position correspondante dans l'autre chaîne
     for start, end in pos:
@@ -65,10 +65,10 @@ def special_cases(analysis_str, base):
 
     # Remplacement par "gg" dans la chaîne d'analyse
     for m in to_match_case:
-        analysis_str = replace_on(analysis_str, base,  m, "gg" )
+        analysis_str = replace_on(analysis_str, base, m, "gg")
 
     # Cas particulier de "gu"
-    analysis_str = replace_on(analysis_str, base,  "gu", "gu" )
+    analysis_str = replace_on(analysis_str, base, "gu", "gu")
     
     return analysis_str
 
