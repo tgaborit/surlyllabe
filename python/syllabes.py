@@ -10,7 +10,12 @@ def get_vowel_consonant(word):
     Fonction d'analyse d'un mot vers une chaîne de voyelles et consonnes.
     """
     # Set des voyelles
-    vowel = {'a', 'e', 'i', 'o', 'u', 'y'}
+    vowel = {'a',      'à', 'â',
+             'e', 'é', 'è', 'ê', 'ë',
+             'i',           'î', 'ï',
+             'o',           'ô',
+             'u',      'ù', 'û',
+             'y'}
 
     # Set des consonnes
     consonant = {'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n',
@@ -20,9 +25,9 @@ def get_vowel_consonant(word):
 
     # Traduction en chaine de voyelles (v) et consonnes (c)
     for i, ch in enumerate(word):
-        if ch in vowel:
+        if ch.casefold() in vowel:
             vowel_consonant_form += "v"
-        elif ch in consonant:
+        elif ch.casefold() in consonant:
             vowel_consonant_form += "c"
 
     return vowel_consonant_form
@@ -38,7 +43,7 @@ def replace_on(on_this, base, to_find, by):
     replace_on(get_vowel_consonant("chat"), "chat", "ch", "gg")
     """
     # Recherche du pattern
-    pos = [(m.start(), m.end()) for m in re.finditer(to_find, base) ]
+    pos = [(m.start(), m.end()) for m in re.finditer(to_find, base.casefold())]
 
     # Remplacement à la position correspondante dans l'autre chaîne
     for start, end in pos:
@@ -60,15 +65,31 @@ def special_cases(analysis_str, base):
 
     # Remplacement par "gg" dans la chaîne d'analyse
     for m in to_match_case:
-        analysis_str = replace_on(analysis_str, base,  m, "gg" )
+        analysis_str = replace_on(analysis_str, base, m, "gg")
 
     # Cas particulier de "gu"
-    analysis_str = replace_on(analysis_str, base,  "gu", "gu" )
+    analysis_str = replace_on(analysis_str, base, "gu", "gu")
     
     return analysis_str
 
 
-def get_syllabation(word):
+def syl_analysis(word):
+    """
+    Fonction d'analyse syllabique d'un mot. Fait appel à la fonction de
+    détection des voyelles et consonnes puis détecte les cas syllabiques
+    particuliers en faisant appel à une seconde fonction.
+    Retourne la chaîne d'analyse finale.
+    """
+    # Détection des voyelles et consonnes
+    vowel_consonant_form = get_vowel_consonant(word)
+
+    # Traitement des cas particuliers
+    final_form = special_cases(vowel_consonant_form, word)
+
+    return final_form
+
+
+def syllabation(word):
     """
     Fonction générale de syllabisation d'un mot. Réalise l'annalyse des
     lettres du mot puis la compare à une liste de règles de syllabisation.
@@ -76,8 +97,7 @@ def get_syllabation(word):
     syllabique du mot.
     """
     
-    vowel_consonant_form = get_vowel_consonant(word)
-    final_form = special_cases(vowel_consonant_form, word)
+    final_form = syl_analysis(word)
 
     # Règles de syllabisation de la langue française par ordre de priorité
     sub_rules = [r"(?=vc)ccv(?=gg)",      # chan-sti-quer
@@ -228,7 +248,7 @@ def get_syllabation(word):
     syllabes = [ word[gr.start():gr.end()] for gr in
                  re.finditer(regle, final_form)]
      
-    return syllabes, final_form
+    return syllabes
 
 
 # test du module syllabes
@@ -248,8 +268,13 @@ if __name__ == "__main__":
         repr("guigne"),
         repr(special_cases(get_vowel_consonant("guigne"), "guigne"))))
 
-    # test fonction get_syllabation
-    print("get_syllabation({}) = {}".format(
+    # test fonction syl_analysis
+    print("syl_analysis({}) = {}".format(
+        repr("pachiderme"),
+        repr(syl_analysis("pachiderme"))))
+    
+    # test fonction syllabation
+    print("syllabation({}) = {}".format(
         repr("pharmacie"),
-        repr(get_syllabation("pharmacie"))))
+        repr(syllabation("pharmacie"))))
     
