@@ -19,7 +19,7 @@ def get_vowel_consonant(word):
 
     # Set des consonnes
     consonant = {'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n',
-                 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'}
+                 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z', 'ç'}
 
     vowel_consonant_form = ""
 
