@@ -1,10 +1,12 @@
 # Surlyllabe
-A syllabic highlighter for Word in French language. Developed in VBA Word, the macro analyses every word contained in selection, calling a Python script to make their syllabation. Finally, it highlights each syllable with different colors, thanks to this analysis.
+A syllabic highlighter for Word in French language. Developed in VBA Word, the macro *SurlignageSyllabique* analyses every word contained in selection, calling a Python script to make their syllabation. Finally, it highlights each syllable with different colors, thanks to this analysis.
 This project has been made-to-mesure for a French teacher in reading learning grade.
 
 ![demo](docs/demo.gif)
 
-Please note that the syllabation is based on French grammar rules and therefore brings no garantee for other languages.
+* Please note that the syllabation is based on French grammar rules and therefore brings no garantee for other languages.
+
+* In addition to *SurlignageSyllabique*, the project comes with *SurlignageSemantique*, which highlights words the same way.
 
 ## Getting Started
 
