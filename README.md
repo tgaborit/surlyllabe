@@ -18,6 +18,34 @@ What things you need to install the software and how to install them
 
 Download the adequate installer, **version 3.2 or ulterior**, *Stable Releases* category, at the address https://www.python.org/downloads/windows/. Then follow the installation instructions.
 
+### Installing
+
+Installation of the Word and Python files in Word Add-Ins default location.
+
+Just Run the batch file :
+````
+%PathToRepository%\surlyllabe>setup.bat
+````
+
+The output should be :
+````
+C:\Users\Patrice\Documents\GitHub\surlyllabe>ECHO OFF
+
+Appuyez sur une touche pour lancer la copie des fichiers
+word\Surlyllabe.dotm
+1 fichier(s) copié(s)
+
+python\syllabes.py
+1 fichier(s) copié(s)
+
+python\syllabation_encoder.py
+1 fichier(s) copié(s)
+
+My work here is done. Now it is time for me to retire.
+
+Appuyez sur une touche pour continuer...
+````
+
 ## Tree view
 
 * `/word` : the Word Add-in containing VBA code of the macros
