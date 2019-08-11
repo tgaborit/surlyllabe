@@ -29,7 +29,7 @@ Just Run the batch file :
 
 The output should be :
 ````
-C:\Users\Patrice\Documents\GitHub\surlyllabe>ECHO OFF
+%PathToRepository%\surlyllabe>ECHO OFF
 
 Appuyez sur une touche pour lancer la copie des fichiers
 word\Surlyllabe.dotm
