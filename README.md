@@ -4,6 +4,8 @@ This project has been made-to-mesure for a French teacher in reading learning gr
 
 ![demo](docs/demo.gif)
 
+Please note that the syllabation is based on French grammar rules and therefore brings no garantee for other languages.
+
 ## Tree view
 
 * `/word` : the Word Add-in containing VBA code of the macros
