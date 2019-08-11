@@ -22,7 +22,7 @@ Download the adequate installer, **version 3.2 or ulterior**, *Stable Releases* 
 
 Installation of the Word and Python files in Word Add-Ins default location.
 
-Just Run the batch file :
+Just run the batch file :
 ````
 %PathToRepository%\surlyllabe>setup.bat
 ````
