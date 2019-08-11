@@ -6,6 +6,18 @@ This project has been made-to-mesure for a French teacher in reading learning gr
 
 Please note that the syllabation is based on French grammar rules and therefore brings no garantee for other languages.
 
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for running purposes.
+
+### Prerequisite
+
+What things you need to install the software and how to install them
+
+##### Python 3.2+
+
+Download the adequate installer, **version 3.2 or ulterior**, *Stable Releases* category, at the address https://www.python.org/downloads/windows/. Then follow the installation instructions.
+
 ## Tree view
 
 * `/word` : the Word Add-in containing VBA code of the macros
