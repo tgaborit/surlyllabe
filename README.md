@@ -29,7 +29,7 @@ Just run the batch file :
 %PathToRepository%\surlyllabe>setup.bat
 ````
 
-The output should be :
+Output should be :
 ````
 %PathToRepository%\surlyllabe>ECHO OFF
 
